@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b2f2a" />
+  <title>Nature Nexus | BIOGLOW Strategy AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="strategy-ai.css" />
+</head>
+<body class="ai-page">
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="Nature Nexus Lab home">
+      <span class="brand-mark">NN</span>
+      <span><strong>Nature Nexus Lab</strong><small>FLL BIOGLOW · 2026–27</small></span>
+    </a>
+    <nav>
+      <a href="index.html">Project Lab</a>
+      <a href="#planner">Strategy AI</a>
+      <a href="#missions">Missions</a>
+      <a href="#attachments">Attachments</a>
+      <a href="#roles">Roles</a>
+      <a href="#updates">Rule Updates</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="ai-hero">
+      <div>
+        <p class="eyebrow">NATURE NEXUS · ROBOT GAME TOOL</p>
+        <h1>BIOGLOW Strategy <span>AI</span></h1>
+        <p class="lede">Generate several strong run plans instead of betting everything on one route. The engine balances <strong>points, reliability, time, mission synergy and attachment changes</strong>.</p>
+        <div class="hero-badges">
+          <span>15 missions</span><span>2:30 match</span><span>5 strategy styles</span><span>Oct. 14 updates included</span>
+        </div>
+      </div>
+      <div class="ai-orb" aria-hidden="true"><div>AI</div><small>PLAN · TEST · ITERATE</small></div>
+    </section>
+
+    <section class="ai-note">
+      <strong>How to use this:</strong> Avyaan marks what the robot can already do, adjusts reliability/time, then presses <b>Generate strategies</b>. The tool ranks mission bundles and creates multiple plans. It is a planning assistant—not an official FIRST scoring tool. The official rulebook and Challenge Updates always win.
+    </section>
+
+    <section id="planner" class="planner-wrap">
+      <aside class="control-panel">
+        <p class="eyebrow">TEAM PROFILE</p>
+        <h2>Tell the AI what is realistic today</h2>
+
+        <label class="control-label">Target number of runs
+          <select id="runCount"><option value="3">3 runs</option><option value="4" selected>4 runs</option><option value="5">5 runs</option><option value="6">6 runs</option></select>
+        </label>
+        <label class="control-label">Attachment-change tolerance
+          <select id="attachmentTolerance"><option value="low">Low — keep it simple</option><option value="medium" selected>Medium</option><option value="high">High — score first</option></select>
+        </label>
+        <label class="control-label">Team priority
+          <select id="priority"><option value="reliable">Reliability first</option><option value="balanced" selected>Balanced</option><option value="score">Maximum score</option><option value="speed">Fast/simple runs</option></select>
+        </label>
+        <label class="control-label">Desired match target
+          <div class="inline-input"><input id="targetScore" type="number" min="100" max="530" step="10" value="300"><span>pts</span></div>
+        </label>
+        <label class="switch-row"><input id="includeInspection" type="checkbox" checked><span>Include 20-point equipment inspection target</span></label>
+        <label class="switch-row"><input id="protectTokens" type="checkbox" checked><span>Protect precision tokens / avoid risky interruptions</span></label>
+
+        <button id="generateBtn" class="ai-button">✦ Generate 5 strategies</button>
+        <button id="resetBtn" class="secondary-button">Reset team profile</button>
+
+        <div class="mini-tip"><strong>Coach tip:</strong> update the mission reliability after every 5–10 practice attempts. The AI becomes more useful when the percentages reflect the team's real robot.</div>
+      </aside>
+
+      <div class="mission-config" id="missions">
+        <div class="section-head compact">
+          <div><p class="eyebrow">MISSION READINESS</p><h2>What is working?</h2></div>
+          <div class="legend"><span class="dot ready"></span>Ready <span class="dot testing"></span>Testing <span class="dot later"></span>Later</div>
+        </div>
+        <div id="missionGrid" class="mission-grid"></div>
+      </div>
+    </section>
+
+    <section class="results-section">
+      <div class="section-head">
+        <div><p class="eyebrow">AI RECOMMENDATIONS</p><h2>Multiple “best” solutions</h2></div>
+        <span id="profileSummary" class="pill light">Balanced profile</span>
+      </div>
+      <div id="strategyResults" class="strategy-results"></div>
+    </section>
+
+
+    <section id="attachments" class="attachment-section">
+      <div class="section-head">
+        <div><p class="eyebrow">ATTACHMENT ADVISOR</p><h2>Build fewer attachments that do more</h2></div>
+        <span class="pill light">Quick-swap · repeatable · mission-specific</span>
+      </div>
+      <p class="section-intro">The strongest attachment is not always the most complicated one. Nature Nexus should prefer rigid guides, hard stops and self-aligning shapes that make the robot land in the same place every time. The AI groups missions that can share one mechanism.</p>
+      <div id="attachmentGrid" class="attachment-grid"></div>
+      <div class="attachment-principles">
+        <article><b>1</b><h3>Universal quick-swap mount</h3><p>Use one consistent pin/axle interface on the front or top of the robot so attachments slide on in one motion. Avoid rebuilding between runs.</p></article>
+        <article><b>2</b><h3>Passive before powered</h3><p>If a wedge, fork, guide or hook can solve the mission without another motor, it is usually faster and more reliable.</p></article>
+        <article><b>3</b><h3>Self-aligning geometry</h3><p>Add funnels, side rails and physical stops. Let LEGO geometry correct small navigation errors instead of relying only on perfect code.</p></article>
+        <article><b>4</b><h3>Design for reset speed</h3><p>Every attachment should have an obvious home position and be installable correctly even when the technicians are under match pressure.</p></article>
+      </div>
+    </section>
+
+    <section id="roles" class="roles-section">
+      <div class="section-head">
+        <div><p class="eyebrow">ROLE OPTIMIZER</p><h2>Who should do what efficiently?</h2></div>
+        <span class="pill light">Rotate roles during practice</span>
+      </div>
+      <div class="role-warning"><strong>Competition note:</strong> These are team-planning recommendations. At an event, follow the current Robot Game Rulebook, Challenge Updates and referee instructions for who may be at the table and when technicians may switch. FIRST publishes the current BIOGLOW rulebook and updates on the official season-materials page.</div>
+      <div class="role-layout">
+        <div>
+          <h3 class="role-subhead">Match-focused roles</h3>
+          <div id="matchRoleGrid" class="role-grid"></div>
+        </div>
+        <div>
+          <h3 class="role-subhead">Practice & development roles</h3>
+          <div id="teamRoleGrid" class="role-grid"></div>
+        </div>
+      </div>
+      <div class="rotation-card">
+        <div><span class="eyebrow">EFFICIENCY RULE</span><h3>One owner, one backup, one checklist</h3></div>
+        <p>For every run, assign one primary technician and one backup. The primary owns robot placement and launch; the backup owns the correct attachment, mission pieces and next-run setup. During practice, a data recorder tracks success rate so the AI reliability sliders reflect real results.</p>
+      </div>
+    </section>
+
+    <section class="synergy-section">
+      <div class="section-head"><div><p class="eyebrow">SMART COMBINATIONS</p><h2>Mission synergies the AI watches</h2></div></div>
+      <div class="synergy-grid">
+        <article><b>M02 → M14</b><h3>Seed chain</h3><p>Collect the three Exploding Seeds instead of scattering them, then reuse them for Seeds of Renewal. The M09 seed can also contribute.</p></article>
+        <article><b>M05 + M07</b><h3>Root + fungus</h3><p>A fully extended root can support the cooperative M07 connection bonus. Coordinate with the opposing team before the match.</p></article>
+        <article><b>M08 + M09</b><h3>Shared tree trip</h3><p>Tangled and Research Platform are built into the same major model, so a well-designed tree attachment can target several scoring actions in one visit.</p></article>
+        <article><b>M13–M15</b><h3>Dock strategy</h3><p>These interchangeable models use the docks. Choose placement based on your robot's easiest approach and the M15 environmental bonus.</p></article>
+        <article><b>M10</b><h3>Score by doing no harm</h3><p>Fragile Microhabitats rewards leaving both habitats in their starting positions. Route planning matters as much as an attachment.</p></article>
+        <article><b>Precision</b><h3>Reliability is points</h3><p>Six or five precision tokens are worth 50 points. A slightly lower mission score can beat an aggressive plan that causes repeated interruptions.</p></article>
+      </div>
+    </section>
+
+    <section id="updates" class="updates-section">
+      <div class="section-head"><div><p class="eyebrow">OFFICIAL UPDATE CHECK</p><h2>Important Oct. 14, 2026 changes</h2></div></div>
+      <div class="update-cards">
+        <article><span>UPDATE 03</span><h3>Tree stabilization · M08 & M09</h3><p>Events are encouraged to stabilize the tree with a thin strip of black tape behind it. Practice with <strong>both taped and untaped</strong> versions.</p></article>
+        <article><span>UPDATE 02</span><h3>Interchangeable docks · M13–M15</h3><p>The robot may autonomously remove an interchangeable model from its dock using the model's built-in latch.</p></article>
+        <article><span>UPDATE 01</span><h3>Lucky Leaves · M04</h3><p>Leaf positions are randomized and teams are not told the katydid's starting placement. Build a solution that tolerates variation instead of relying on one exact setup.</p></article>
+      </div>
+    </section>
+
+    <section class="rules-source">
+      <h2>Built from the 2026–27 BIOGLOW Founders Edition Challenge</h2>
+      <p>The mission names and scoring conditions in this tool are based on the published Robot Game materials. Always verify the latest official FIRST Robot Game Rulebook, Challenge Updates, and event referee guidance before competition.</p>
+      <div class="source-actions"><a class="btn primary" href="https://www.firstinspires.org/resources/library/fll/season-materials" target="_blank" rel="noopener">Official season materials ↗</a><a class="btn ghost" href="index.html">← Back to Nature Nexus Lab</a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><strong>Nature Nexus</strong><span>BIOGLOW Strategy AI · student planning tool</span></footer>
+  <script src="strategy-ai.js"></script>
+</body>
+</html>

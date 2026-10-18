@@ -25,3 +25,10 @@ This version includes the Nature Nexus expert journey with Dr. Brent Bellinger, 
 
 ## Verified merged version
 This package preserves the complete expert-journey content for Dr. Brent Bellinger, Mr. Chintan Maniyar, and the Dr. Vijay + Mr. Tom meeting, including what the team learned and how expert feedback influenced the project. It also includes the proposed floating water-quality monitoring device image and all prior interactive site sections.
+
+## BIOGLOW Strategy AI
+Open `strategy-ai.html` to use the robot-game strategy planner. It contains the 15 BIOGLOW Founders Edition missions, editable readiness/reliability/time assumptions, five strategy styles, mission synergies, and the October 14, 2026 Challenge Update reminders. This is a planning aid; official FIRST materials control at events.
+
+
+## BIOGLOW AI additions
+The Strategy AI now includes an Attachment Advisor, mission-specific attachment suggestions, attachment recommendations per generated run, and a Role Optimizer for match-focused and practice/development roles. Competition table access is intentionally described as a recommendation only; always follow the current official rulebook and referee instructions.
