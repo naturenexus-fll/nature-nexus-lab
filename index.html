@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#102a24" />
+  <title>Nature Nexus Lab | Blue-Green Algae Robotics Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#top" class="brand" aria-label="Nature Nexus Lab home">
+      <span class="brand-mark">NN</span>
+      <span><strong>Nature Nexus Lab</strong><small>FLL BIOGLOW · 2026–27</small></span>
+    </a>
+    <nav>
+      <a href="#explore">Explore</a>
+      <a href="#robot">Robot Lab</a>
+      <a href="#notebook">Notebook</a>
+      <a href="#experts">Experts</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">LADY BIRD LAKE · AUSTIN, TEXAS</p>
+        <h1>Can a small robot help us spot <em>conditions</em> that favor blue-green algae?</h1>
+        <p class="lede">Nature Nexus is exploring how water temperature, pH, dissolved oxygen, turbidity, nutrients and water movement change together — and how an affordable sensor robot could make those changes easier to see.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#robot">See the robot</a>
+          <a class="btn ghost" href="#risk-lab">Try the risk lab</a>
+        </div>
+        <p class="note">Student research prototype. It does <strong>not</strong> determine whether water is safe or whether cyanobacteria are toxic.</p>
+      </div>
+      <div class="hero-visual" aria-label="Nature Nexus water monitoring concept illustration">
+        <div class="lake-orb">
+          <div class="ripple r1"></div><div class="ripple r2"></div><div class="ripple r3"></div>
+          <div class="robot">⚙</div>
+          <span class="sensor s1">TEMP</span><span class="sensor s2">pH</span><span class="sensor s3">DO</span><span class="sensor s4">NTU</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="explore" class="section intro-grid">
+      <div>
+        <p class="eyebrow">THE QUESTION</p>
+        <h2>From a lake problem to a testable engineering challenge</h2>
+      </div>
+      <div class="prose">
+        <p>Austin reports that conditions favorable to harmful blue-green algae include <strong>warm water, low flow and high nutrient levels</strong>. The city also notes that field samples are snapshots: conditions can change quickly and vary around the lake.</p>
+        <p>That gap inspired our challenge: <strong>build a system that measures several environmental clues repeatedly and puts them together in one simple dashboard.</strong></p>
+      </div>
+    </section>
+
+    <section class="section cards three">
+      <article class="card"><span class="num">01</span><h3>Observe</h3><p>Measure water conditions with affordable sensors instead of relying on a single visual clue.</p></article>
+      <article class="card"><span class="num">02</span><h3>Connect</h3><p>Compare temperature, pH, oxygen, turbidity, nutrients and movement to look for patterns.</p></article>
+      <article class="card"><span class="num">03</span><h3>Communicate</h3><p>Turn readings into a clear traffic-light style signal for research — not a public safety warning.</p></article>
+    </section>
+
+    <section id="robot" class="section dark">
+      <div class="section-head">
+        <div><p class="eyebrow">ROBOT LAB</p><h2>Nature Nexus Water Scout</h2></div>
+        <span class="pill">Arduino Mega prototype</span>
+      </div>
+      <div class="robot-grid">
+        <div class="system-diagram">
+          <div class="brain">Arduino<br><strong>Mega 2560</strong></div>
+          <div class="node done" style="--x:12%;--y:18%"><b>✓</b> Water temp<small>DS18B20</small></div>
+          <div class="node done" style="--x:12%;--y:70%"><b>✓</b> Turbidity<small>analog sensor</small></div>
+          <div class="node next" style="--x:68%;--y:12%"><b>→</b> pH<small>probe + board</small></div>
+          <div class="node next" style="--x:72%;--y:42%"><b>→</b> Dissolved O₂<small>DO sensor</small></div>
+          <div class="node planned" style="--x:68%;--y:75%"><b>+</b> Nutrients<small>phosphate / nitrate</small></div>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 50 L21 26 M50 50 L21 75 M50 50 L72 20 M50 50 L76 47 M50 50 L72 80"/></svg>
+        </div>
+        <div class="build-list">
+          <h3>What each sensor tells us</h3>
+          <div class="sensor-row"><strong>Water temperature</strong><span>Warm water can favor cyanobacterial growth.</span></div>
+          <div class="sensor-row"><strong>pH</strong><span>Photosynthesis can shift pH, so trends may reveal biological activity.</span></div>
+          <div class="sensor-row"><strong>Dissolved oxygen</strong><span>Oxygen can rise during photosynthesis and fall when biomass respires or decays.</span></div>
+          <div class="sensor-row"><strong>Turbidity</strong><span>Tracks how cloudy the water is; useful as context, but not an algae detector by itself.</span></div>
+          <div class="sensor-row"><strong>Phosphate & nitrate</strong><span>Nutrients can support excess growth; the team can use a water-intake sample for low-cost testing.</span></div>
+          <div class="sensor-row"><strong>Water movement</strong><span>Helps distinguish still from moving water, an important condition in the team’s hypothesis.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="risk-lab" class="section">
+      <div class="section-head"><div><p class="eyebrow">INTERACTIVE MODEL</p><h2>Algae Conditions Lab</h2></div><span class="pill light">Educational model</span></div>
+      <p class="section-copy">Move the sliders and see how multiple conditions can combine. This score is a classroom visualization, not a toxin prediction.</p>
+      <div class="lab-grid">
+        <div class="controls">
+          <label>Water temperature <output id="tempOut">27 °C</output><input id="temp" type="range" min="10" max="36" value="27"></label>
+          <label>Water movement <output id="flowOut">35%</output><input id="flow" type="range" min="0" max="100" value="35"></label>
+          <label>Relative nutrients <output id="nutOut">55%</output><input id="nut" type="range" min="0" max="100" value="55"></label>
+          <label>Dissolved oxygen <output id="doOut">6.5 mg/L</output><input id="doo" type="range" min="20" max="120" value="65"></label>
+        </div>
+        <div class="gauge-wrap">
+          <div class="gauge" id="gauge"><div><strong id="riskScore">52</strong><span>condition score</span></div></div>
+          <h3 id="riskLabel">Watch conditions</h3>
+          <p id="riskText">Several conditions may support growth. Keep measuring and compare the trend over time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="notebook" class="section notebook">
+      <div class="section-head"><div><p class="eyebrow">RESEARCH NOTEBOOK</p><h2>Build → test → learn → improve</h2></div></div>
+      <div class="timeline">
+        <article><time>STEP 1</time><h3>Understand the problem</h3><p>Study Lady Bird Lake, cyanobacteria, toxins, nutrients, flow and existing monitoring limitations.</p></article>
+        <article><time>STEP 2</time><h3>Talk with experts</h3><p>Use scientist and watershed conversations to discover what data matter, what is difficult to measure and where a student prototype could help.</p></article>
+        <article><time>STEP 3</time><h3>Build one sensor at a time</h3><p>Verify each connection and reading before adding another sensor. Current progress: water temperature verified; turbidity added to the build.</p></article>
+        <article><time>STEP 4</time><h3>Run controlled tub tests</h3><p>Change one condition at a time, record data and compare repeat trials. Avoid culturing or handling potentially toxic cyanobacteria.</p></article>
+        <article><time>STEP 5</time><h3>Integrate the robot</h3><p>Add mobility or a sampling mechanism so the system can gather readings from different locations in a test tub.</p></article>
+        <article><time>STEP 6</time><h3>Explain uncertainty</h3><p>Show what the sensors can tell us — and what they cannot. Confirming cyanobacteria or toxins requires appropriate biological or laboratory testing.</p></article>
+      </div>
+    </section>
+
+    <section id="experts" class="section expert-section">
+      <p class="eyebrow">COMMUNITY & EXPERT INPUT</p><h2>Learning beyond Google</h2>
+      <p class="section-copy">The team has been reaching out to watershed professionals, researchers and sensor companies to understand the real-world problem and improve the design.</p>
+      <div class="cards three">
+        <article class="card"><h3>Watershed professionals</h3><p>How Austin monitors algae, what changes quickly in the lake and why a single sample cannot describe every location.</p></article>
+        <article class="card"><h3>Researchers</h3><p>Questions about mats, nutrients, sediment, microchemistry and what small-scale experiments could reveal.</p></article>
+        <article class="card"><h3>Sensor companies</h3><p>Exploring phycocyanin and water-quality sensors, practical limitations, cost and possible sponsorship for student testing.</p></article>
+      </div>
+    </section>
+
+    <section class="section dashboard">
+      <div class="section-head"><div><p class="eyebrow">FUTURE DASHBOARD</p><h2>What live readings could look like</h2></div><span class="live-dot">prototype view</span></div>
+      <div class="metrics">
+        <div><span>Water temp</span><strong>27.4°C</strong><small>demo value</small></div>
+        <div><span>pH</span><strong>7.8</strong><small>demo value</small></div>
+        <div><span>Dissolved O₂</span><strong>6.2</strong><small>mg/L · demo</small></div>
+        <div><span>Turbidity</span><strong>14</strong><small>NTU · demo</small></div>
+        <div><span>Movement</span><strong>Low</strong><small>demo value</small></div>
+        <div><span>Phosphate</span><strong>Test</strong><small>manual sample</small></div>
+      </div>
+    </section>
+
+    <section id="sources" class="section sources">
+      <p class="eyebrow">DATA & SOURCES</p><h2>Use evidence. Show the limits.</h2>
+      <div class="source-grid">
+        <a href="https://www.austintexas.gov/watershed-protection/algae-austins-waterways" target="_blank" rel="noopener"><strong>Austin Watershed Protection</strong><span>Algae in Austin's Waterways · current status, monitoring and treatment</span></a>
+        <a href="https://www.austintexas.gov/watershed-protection/news/blue-green-algae-returns-red-bud-isle-walsh-boat-ramp" target="_blank" rel="noopener"><strong>City of Austin · June 2026</strong><span>Blue-green algae at Red Bud Isle and Walsh Boat Landing</span></a>
+        <a href="https://www.dshs.texas.gov/sites/default/files/CHI-EEDRS/HAB%20Guidance%20Texas_Final_Draft_20240201-%20DO%20review%2002%2007%202024_revised_clean.pdf" target="_blank" rel="noopener"><strong>Texas DSHS</strong><span>Public-health guidance for cyanobacterial harmful blooms</span></a>
+        <a href="https://chintan2108.github.io/lake-lab/" target="_blank" rel="noopener"><strong>Lake Lab</strong><span>Inspiration for an interactive, evidence-first learning experience</span></a>
+      </div>
+      <p class="fineprint">Nature Nexus Lab is an independent student project concept inspired by the learning approach of Lake Lab. It is not affiliated with the City of Austin and should not be used for recreation or health decisions.</p>
+    </section>
+  </main>
+
+  <footer><strong>Nature Nexus</strong><span>FLL BIOGLOW · Explore nature. Measure carefully. Build thoughtfully.</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
