@@ -4,156 +4,181 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#0b2f2a" />
-  <title>Nature Nexus | BIOGLOW Strategy AI</title>
+  <title>Nature Nexus | BIOGLOW Future Edition Strategy AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="strategy-ai.css" />
 </head>
-<body class="ai-page">
-  <header class="site-header">
-    <a href="index.html" class="brand" aria-label="Nature Nexus Lab home">
-      <span class="brand-mark">NN</span>
-      <span><strong>Nature Nexus Lab</strong><small>FLL BIOGLOW · 2026–27</small></span>
-    </a>
-    <nav>
-      <a href="index.html">Project Lab</a>
-      <a href="#planner">Strategy AI</a>
-      <a href="#missions">Missions</a>
-      <a href="#attachments">Attachments</a>
-      <a href="#roles">Roles</a>
-      <a href="#updates">Rule Updates</a>
-    </nav>
-  </header>
+<body class="ai-page future-ai">
+<header class="site-header">
+  <a href="index.html" class="brand" aria-label="Nature Nexus Lab home">
+    <span class="brand-mark">NN</span>
+    <span><strong>Nature Nexus Lab</strong><small>FIRST® LEGO® League Future Edition · BIOGLOW™ · 2026–27</small></span>
+  </a>
+  <nav>
+    <a href="index.html">Project Lab</a>
+    <a href="#planner">Strategy AI</a>
+    <a href="#attachments">Tools & Attachments</a>
+    <a href="#roles">Roles</a>
+    <a href="#sources">Official Sources</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="ai-hero">
+<main>
+  <section class="ai-hero">
+    <div>
+      <p class="eyebrow">NATURE NEXUS · FUTURE EDITION GAME TOOL</p>
+      <h1>BIOGLOW™ Future Edition <span>Strategy AI</span></h1>
+      <p class="lede">Build several strong plans for the alliance-based 2:30 game. The planner combines <strong>mission readiness, role efficiency, legal tool design, reliability, teamwork and fallback options</strong>.</p>
+      <div class="hero-badges"><span>5 main missions</span><span>Level Up option</span><span>4 official roles</span><span>2:30 match</span><span>Alliance field</span></div>
+    </div>
+    <div class="ai-orb" aria-hidden="true"><div>AI</div><small>PLAN · TEST · COORDINATE</small></div>
+  </section>
+
+  <section class="ai-note important-note">
+    <strong>Future Edition, not Founders Edition:</strong> This planner follows the official 2026–27 Future Edition Grades 3–8 game structure. Each match assigns one <b>Driver, Operator, Technician and Specialist</b>. Role-card example tools are starting points; teams may modify tool designs and code within the rulebook. Always use the latest FIRST/LEGO Education Game Updates as the final authority.
+  </section>
+
+  <section id="planner" class="future-planner">
+    <aside class="control-panel">
+      <p class="eyebrow">TEAM PROFILE</p>
+      <h2>What is Nature Nexus ready for?</h2>
+      <label class="control-label">Main priority
+        <select id="priority">
+          <option value="reliable">Reliability first</option>
+          <option value="balanced" selected>Balanced score + reliability</option>
+          <option value="score">Maximum scoring potential</option>
+          <option value="coop">Coopertition / alliance coordination</option>
+          <option value="simple">Simplest tools & actions</option>
+        </select>
+      </label>
+      <label class="control-label">Level Up difficulty
+        <select id="levelUp">
+          <option value="0">Skip Level Up</option>
+          <option value="2" selected>Add 2 invasive species</option>
+          <option value="3">Add 3 invasive species</option>
+          <option value="5">Add all 5 invasive species</option>
+        </select>
+      </label>
+      <label class="switch-row"><input id="favorFewerTools" type="checkbox" checked><span>Prefer fewer / multipurpose attachments</span></label>
+      <label class="switch-row"><input id="favorAutomation" type="checkbox"><span>Favor autonomous / programmed actions</span></label>
+      <button id="generateBtn" class="ai-button">✦ Generate 5 complete strategies</button>
+      <button id="resetBtn" class="secondary-button">Reset readiness</button>
+      <div class="mini-tip"><strong>Practice tip:</strong> after every 5–10 attempts, update each mission readiness from real results. The planner then changes which strategies it recommends.</div>
+    </aside>
+
+    <div class="mission-config">
+      <div class="section-head compact">
+        <div><p class="eyebrow">MISSION READINESS</p><h2>Rate the team's current confidence</h2></div>
+        <span class="pill light">0 = not ready · 100 = match ready</span>
+      </div>
+      <div id="missionGrid" class="future-mission-grid"></div>
+    </div>
+  </section>
+
+  <section class="results-section">
+    <div class="section-head">
+      <div><p class="eyebrow">MULTIPLE “BEST” ANSWERS</p><h2>Five strategy styles</h2></div>
+      <span id="profileSummary" class="pill light">Balanced profile</span>
+    </div>
+    <p class="section-intro">There is no single perfect Future Edition plan. The best plan depends on what the four players can execute reliably, how the other team cooperates, and how much risk Nature Nexus wants to accept.</p>
+    <div id="strategyResults" class="future-strategy-results"></div>
+  </section>
+
+  <section id="attachments" class="attachment-section">
+    <div class="section-head">
+      <div><p class="eyebrow">TOOL & ATTACHMENT ADVISOR</p><h2>What can each role build or add?</h2></div>
+      <span class="pill light">Rule-aware ideas</span>
+    </div>
+    <div class="role-warning"><strong>Rule boundary:</strong> Future Edition allows non-electric LEGO bricks in any quantity, but electronic hardware is limited to the exact permitted types/quantities. The Driver base can receive attachments when it is completely inside the Technician Area. Operator tools are mechanical/non-electric and must stay in the Operator Area. The Technician robotic tool uses one single motor + one color sensor. The Specialist primarily controls the Grand Tree and programs. Controller grips/guards are allowed but cannot perform other game actions.</div>
+    <div id="attachmentGrid" class="future-tool-grid"></div>
+  </section>
+
+  <section id="roles" class="roles-section">
+    <div class="section-head">
+      <div><p class="eyebrow">ROLE OPTIMIZER</p><h2>What should each player do efficiently?</h2></div>
+      <span class="pill light">Driver · Operator · Technician · Specialist</span>
+    </div>
+    <div id="officialRoleGrid" class="future-role-grid"></div>
+    <div class="rotation-card">
+      <div><span class="eyebrow">PRACTICE METHOD</span><h3>Train primary + backup skills before choosing match roles</h3></div>
+      <p>Players cannot switch roles once a match begins. During practice, rotate everyone through all four roles, record success rates, then assign match roles based on evidence: calm driving, accurate launching, fast attachment work, coding confidence and field awareness.</p>
+    </div>
+  </section>
+
+  <section class="synergy-section">
+    <div class="section-head"><div><p class="eyebrow">HIGH-VALUE COMBINATIONS</p><h2>Future Edition synergies</h2></div></div>
+    <div class="synergy-grid">
+      <article><b>M01 + M04</b><h3>Release → place keystones</h3><p>Free keystone species from the Nest, then route them toward microbiomes. The Young Forest fourth keystone can also trigger the opposite-side invasive queen bonus.</p></article>
+      <article><b>M02 + Specialist</b><h3>Resource pipeline</h3><p>Operator feeds resources into the Grand Tree base while the Specialist cycles them upward to the canopy chamber. Smooth rhythm matters more than random speed.</p></article>
+      <article><b>M03 + Tree rotation</b><h3>Waterfall engine</h3><p>The Specialist reveals the Cave Waterfall entrance, then the team repeatedly cycles keystone species through it. The mission can reward sustained throughput.</p></article>
+      <article><b>M05</b><h3>Shared endgame</h3><p>Both teams receive the full shared Central Haven score. Coordinate before and during the match so late deliveries do not block each other.</p></article>
+      <article><b>Level Up</b><h3>Risk-for-points choice</h3><p>Add only as many invasive species as the team can realistically contain. More added pieces raise scoring potential but also increase field congestion and execution risk.</p></article>
+      <article><b>Driver + Technician</b><h3>Mobile tool carrier</h3><p>The driving base may move the Technician robotic tool outside the Technician Area, opening combined strategies for collection, launching and delivery.</p></article>
+    </div>
+  </section>
+
+  <section id="sources" class="sources-section resource-hub">
+    <div class="section-head">
       <div>
-        <p class="eyebrow">NATURE NEXUS · ROBOT GAME TOOL</p>
-        <h1>BIOGLOW Strategy <span>AI</span></h1>
-        <p class="lede">Generate several strong run plans instead of betting everything on one route. The engine balances <strong>points, reliability, time, mission synergy and attachment changes</strong>.</p>
-        <div class="hero-badges">
-          <span>15 missions</span><span>2:30 match</span><span>5 strategy styles</span><span>Oct. 14 updates included</span>
-        </div>
+        <p class="eyebrow">OFFICIAL FIRST® LEGO® LEAGUE RESOURCES</p>
+        <h2>Future Edition Resource Hub</h2>
+        <p class="section-intro">Use these official links whenever the team is checking rules, mission details, role limits, scoring, or season updates. If this Strategy AI ever conflicts with an official document, the latest official FIRST® / LEGO® Education material wins.</p>
       </div>
-      <div class="ai-orb" aria-hidden="true"><div>AI</div><small>PLAN · TEST · ITERATE</small></div>
-    </section>
+    </div>
 
-    <section class="ai-note">
-      <strong>How to use this:</strong> Avyaan marks what the robot can already do, adjusts reliability/time, then presses <b>Generate strategies</b>. The tool ranks mission bundles and creates multiple plans. It is a planning assistant—not an official FIRST scoring tool. The official rulebook and Challenge Updates always win.
-    </section>
+    <div class="resource-grid">
+      <a class="resource-card primary" href="https://www.firstinspires.org/resources/library/fll/season-materials" target="_blank" rel="noopener">
+        <span class="resource-icon">🌱</span>
+        <div><small>START HERE</small><h3>FIRST® BIOGLOW™ Season Materials</h3><p>Main FIRST page for 2026–27 BIOGLOW materials, including Future Edition access points and season resources.</p></div>
+      </a>
 
-    <section id="planner" class="planner-wrap">
-      <aside class="control-panel">
-        <p class="eyebrow">TEAM PROFILE</p>
-        <h2>Tell the AI what is realistic today</h2>
+      <a class="resource-card" href="https://education.lego.com/en-us/first-lego-league/season-materials/" target="_blank" rel="noopener">
+        <span class="resource-icon">🧱</span>
+        <div><small>FUTURE EDITION</small><h3>LEGO® Education Season Materials</h3><p>Teacher and student resources for FIRST® LEGO® League Future Edition.</p></div>
+      </a>
 
-        <label class="control-label">Target number of runs
-          <select id="runCount"><option value="3">3 runs</option><option value="4" selected>4 runs</option><option value="5">5 runs</option><option value="6">6 runs</option></select>
-        </label>
-        <label class="control-label">Attachment-change tolerance
-          <select id="attachmentTolerance"><option value="low">Low — keep it simple</option><option value="medium" selected>Medium</option><option value="high">High — score first</option></select>
-        </label>
-        <label class="control-label">Team priority
-          <select id="priority"><option value="reliable">Reliability first</option><option value="balanced" selected>Balanced</option><option value="score">Maximum score</option><option value="speed">Fast/simple runs</option></select>
-        </label>
-        <label class="control-label">Desired match target
-          <div class="inline-input"><input id="targetScore" type="number" min="100" max="530" step="10" value="300"><span>pts</span></div>
-        </label>
-        <label class="switch-row"><input id="includeInspection" type="checkbox" checked><span>Include 20-point equipment inspection target</span></label>
-        <label class="switch-row"><input id="protectTokens" type="checkbox" checked><span>Protect precision tokens / avoid risky interruptions</span></label>
+      <a class="resource-card" href="https://www.firstinspires.org/programs/fll/game-and-season" target="_blank" rel="noopener">
+        <span class="resource-icon">🎮</span>
+        <div><small>SEASON OVERVIEW</small><h3>BIOGLOW™ Game & Season</h3><p>Official overview of the BIOGLOW season and links to the current edition materials.</p></div>
+      </a>
 
-        <button id="generateBtn" class="ai-button">✦ Generate 5 strategies</button>
-        <button id="resetBtn" class="secondary-button">Reset team profile</button>
+      <a class="resource-card" href="https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt459e8bb5a19be9e2/6a69a003c5cd7b190e301570/fll-future-3-8-bioglow-game-missions.pdf?locale=en-us" target="_blank" rel="noopener">
+        <span class="resource-icon">🗺️</span>
+        <div><small>OFFICIAL PDF</small><h3>Future Edition Game Missions</h3><p>Mission objectives and scoring details for the Grades 3–8 Future Edition game.</p></div>
+      </a>
 
-        <div class="mini-tip"><strong>Coach tip:</strong> update the mission reliability after every 5–10 practice attempts. The AI becomes more useful when the percentages reflect the team's real robot.</div>
-      </aside>
+      <a class="resource-card" href="https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt0ab6a9966c6b1311/6a69a004d2b04f14a12a973f/fll-future-3-8-bioglow-rulebook.pdf?locale=en-us" target="_blank" rel="noopener">
+        <span class="resource-icon">📘</span>
+        <div><small>OFFICIAL PDF</small><h3>Future Edition Rulebook</h3><p>Rules for match play, roles, tools, electronics, interaction areas, and game procedures.</p></div>
+      </a>
 
-      <div class="mission-config" id="missions">
-        <div class="section-head compact">
-          <div><p class="eyebrow">MISSION READINESS</p><h2>What is working?</h2></div>
-          <div class="legend"><span class="dot ready"></span>Ready <span class="dot testing"></span>Testing <span class="dot later"></span>Later</div>
-        </div>
-        <div id="missionGrid" class="mission-grid"></div>
-      </div>
-    </section>
+      <a class="resource-card" href="https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt212441cab0b88d19/6a69a00311c38fa1c9eef11f/fll-future-3-8-bioglow-role-card-operator.pdf?locale=en-us" target="_blank" rel="noopener">
+        <span class="resource-icon">🎯</span>
+        <div><small>ROLE CARD</small><h3>Operator Role Card</h3><p>Official Operator responsibilities and tool boundaries. Use the season-materials page for the other role cards as well.</p></div>
+      </a>
 
-    <section class="results-section">
-      <div class="section-head">
-        <div><p class="eyebrow">AI RECOMMENDATIONS</p><h2>Multiple “best” solutions</h2></div>
-        <span id="profileSummary" class="pill light">Balanced profile</span>
-      </div>
-      <div id="strategyResults" class="strategy-results"></div>
-    </section>
+      <a class="resource-card" href="https://www.firstinspires.org/resources/library/fll/email-blast-archive" target="_blank" rel="noopener">
+        <span class="resource-icon">📣</span>
+        <div><small>UPDATES</small><h3>FIRST® Team Email & Update Archive</h3><p>Useful place to check for Future Edition game updates, reminders, and season announcements.</p></div>
+      </a>
 
+      <a class="resource-card" href="https://www.firstinspires.org/programs/fll/" target="_blank" rel="noopener">
+        <span class="resource-icon">🤖</span>
+        <div><small>PROGRAM HOME</small><h3>FIRST® LEGO® League</h3><p>Official program information for FIRST® LEGO® League and the 2026–27 BIOGLOW season.</p></div>
+      </a>
+    </div>
 
-    <section id="attachments" class="attachment-section">
-      <div class="section-head">
-        <div><p class="eyebrow">ATTACHMENT ADVISOR</p><h2>Build fewer attachments that do more</h2></div>
-        <span class="pill light">Quick-swap · repeatable · mission-specific</span>
-      </div>
-      <p class="section-intro">The strongest attachment is not always the most complicated one. Nature Nexus should prefer rigid guides, hard stops and self-aligning shapes that make the robot land in the same place every time. The AI groups missions that can share one mechanism.</p>
-      <div id="attachmentGrid" class="attachment-grid"></div>
-      <div class="attachment-principles">
-        <article><b>1</b><h3>Universal quick-swap mount</h3><p>Use one consistent pin/axle interface on the front or top of the robot so attachments slide on in one motion. Avoid rebuilding between runs.</p></article>
-        <article><b>2</b><h3>Passive before powered</h3><p>If a wedge, fork, guide or hook can solve the mission without another motor, it is usually faster and more reliable.</p></article>
-        <article><b>3</b><h3>Self-aligning geometry</h3><p>Add funnels, side rails and physical stops. Let LEGO geometry correct small navigation errors instead of relying only on perfect code.</p></article>
-        <article><b>4</b><h3>Design for reset speed</h3><p>Every attachment should have an obvious home position and be installable correctly even when the technicians are under match pressure.</p></article>
-      </div>
-    </section>
+    <div class="resource-checklist">
+      <strong>Before a tournament:</strong> check the Game Missions, Rulebook, all four Role Cards, scoresheet/scoring material, and the latest Game Updates.
+    </div>
+    <p class="fine-print">Nature Nexus Strategy AI is an unofficial planning aid. Official FIRST® and LEGO® Education rules and updates always take priority.</p>
+  </section>
+</main>
 
-    <section id="roles" class="roles-section">
-      <div class="section-head">
-        <div><p class="eyebrow">ROLE OPTIMIZER</p><h2>Who should do what efficiently?</h2></div>
-        <span class="pill light">Rotate roles during practice</span>
-      </div>
-      <div class="role-warning"><strong>Competition note:</strong> These are team-planning recommendations. At an event, follow the current Robot Game Rulebook, Challenge Updates and referee instructions for who may be at the table and when technicians may switch. FIRST publishes the current BIOGLOW rulebook and updates on the official season-materials page.</div>
-      <div class="role-layout">
-        <div>
-          <h3 class="role-subhead">Match-focused roles</h3>
-          <div id="matchRoleGrid" class="role-grid"></div>
-        </div>
-        <div>
-          <h3 class="role-subhead">Practice & development roles</h3>
-          <div id="teamRoleGrid" class="role-grid"></div>
-        </div>
-      </div>
-      <div class="rotation-card">
-        <div><span class="eyebrow">EFFICIENCY RULE</span><h3>One owner, one backup, one checklist</h3></div>
-        <p>For every run, assign one primary technician and one backup. The primary owns robot placement and launch; the backup owns the correct attachment, mission pieces and next-run setup. During practice, a data recorder tracks success rate so the AI reliability sliders reflect real results.</p>
-      </div>
-    </section>
-
-    <section class="synergy-section">
-      <div class="section-head"><div><p class="eyebrow">SMART COMBINATIONS</p><h2>Mission synergies the AI watches</h2></div></div>
-      <div class="synergy-grid">
-        <article><b>M02 → M14</b><h3>Seed chain</h3><p>Collect the three Exploding Seeds instead of scattering them, then reuse them for Seeds of Renewal. The M09 seed can also contribute.</p></article>
-        <article><b>M05 + M07</b><h3>Root + fungus</h3><p>A fully extended root can support the cooperative M07 connection bonus. Coordinate with the opposing team before the match.</p></article>
-        <article><b>M08 + M09</b><h3>Shared tree trip</h3><p>Tangled and Research Platform are built into the same major model, so a well-designed tree attachment can target several scoring actions in one visit.</p></article>
-        <article><b>M13–M15</b><h3>Dock strategy</h3><p>These interchangeable models use the docks. Choose placement based on your robot's easiest approach and the M15 environmental bonus.</p></article>
-        <article><b>M10</b><h3>Score by doing no harm</h3><p>Fragile Microhabitats rewards leaving both habitats in their starting positions. Route planning matters as much as an attachment.</p></article>
-        <article><b>Precision</b><h3>Reliability is points</h3><p>Six or five precision tokens are worth 50 points. A slightly lower mission score can beat an aggressive plan that causes repeated interruptions.</p></article>
-      </div>
-    </section>
-
-    <section id="updates" class="updates-section">
-      <div class="section-head"><div><p class="eyebrow">OFFICIAL UPDATE CHECK</p><h2>Important Oct. 14, 2026 changes</h2></div></div>
-      <div class="update-cards">
-        <article><span>UPDATE 03</span><h3>Tree stabilization · M08 & M09</h3><p>Events are encouraged to stabilize the tree with a thin strip of black tape behind it. Practice with <strong>both taped and untaped</strong> versions.</p></article>
-        <article><span>UPDATE 02</span><h3>Interchangeable docks · M13–M15</h3><p>The robot may autonomously remove an interchangeable model from its dock using the model's built-in latch.</p></article>
-        <article><span>UPDATE 01</span><h3>Lucky Leaves · M04</h3><p>Leaf positions are randomized and teams are not told the katydid's starting placement. Build a solution that tolerates variation instead of relying on one exact setup.</p></article>
-      </div>
-    </section>
-
-    <section class="rules-source">
-      <h2>Built from the 2026–27 BIOGLOW Founders Edition Challenge</h2>
-      <p>The mission names and scoring conditions in this tool are based on the published Robot Game materials. Always verify the latest official FIRST Robot Game Rulebook, Challenge Updates, and event referee guidance before competition.</p>
-      <div class="source-actions"><a class="btn primary" href="https://www.firstinspires.org/resources/library/fll/season-materials" target="_blank" rel="noopener">Official season materials ↗</a><a class="btn ghost" href="index.html">← Back to Nature Nexus Lab</a></div>
-    </section>
-  </main>
-
-  <footer class="site-footer"><strong>Nature Nexus</strong><span>BIOGLOW Strategy AI · student planning tool</span></footer>
-  <script src="strategy-ai.js"></script>
+<footer><strong>Nature Nexus Lab</strong><span>FIRST® LEGO® League Future Edition · BIOGLOW™ 2026–27</span></footer>
+<script src="strategy-ai.js"></script>
 </body>
 </html>

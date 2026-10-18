@@ -1,34 +1,24 @@
-# Nature Nexus Lab
+# Nature Nexus Lab — Future Edition Strategy AI
 
-A static interactive website concept for the Nature Nexus FLL BIOGLOW innovation project.
+This version preserves the Nature Nexus blue-green algae project website and replaces the older Founders-Edition-style robot-game planner with a planner built for **FIRST® LEGO® League Future Edition — BIOGLOW™ 2026–27 (Grades 3–8)**.
 
-## Open it
-Double-click `index.html` or serve this folder with any static web server.
+## Strategy AI features
+- Uses the Future Edition game structure: M01–M05 + optional Level Up challenge.
+- Five strategy styles: Reliable Foundation, Keystone Engine, Resource Pipeline, Coopertition Finish, High-Upside Level Up.
+- Mission-readiness sliders based on team practice.
+- Tool/attachment advisor for Driver, Operator, Technician and Specialist.
+- Role optimizer explaining official role boundaries and efficient jobs.
+- Each strategy uses the same pattern: Goal → Mission emphasis → Tool set → Who handles what → Suggested sequence → Risk → Backup plan.
+- Designed as an offline GitHub Pages site; it uses a local rules/strategy engine and does not require an API key.
 
-## Publish free with GitHub Pages
-1. Create a new GitHub repository, e.g. `nature-nexus-lab`.
-2. Upload `index.html`, `styles.css`, and `app.js` to the repository root.
-3. In GitHub: Settings → Pages → Deploy from a branch → `main` / root.
-4. GitHub will provide a public URL.
+## Official Future Edition resource links
+- FIRST BIOGLOW Season Materials: https://www.firstinspires.org/resources/library/fll/season-materials
+- LEGO Education Future Edition Season Materials: https://education.lego.com/en-us/first-lego-league/season-materials/
+- FIRST BIOGLOW Game & Season: https://www.firstinspires.org/programs/fll/game-and-season
+- Future Edition Game Missions PDF: https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt459e8bb5a19be9e2/6a69a003c5cd7b190e301570/fll-future-3-8-bioglow-game-missions.pdf?locale=en-us
+- Future Edition Rulebook PDF: https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt0ab6a9966c6b1311/6a69a004d2b04f14a12a973f/fll-future-3-8-bioglow-rulebook.pdf?locale=en-us
+- Operator Role Card PDF: https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt212441cab0b88d19/6a69a00311c38fa1c9eef11f/fll-future-3-8-bioglow-role-card-operator.pdf?locale=en-us
+- FIRST Team Email / Updates Archive: https://www.firstinspires.org/resources/library/fll/email-blast-archive
+- FIRST LEGO League Program Home: https://www.firstinspires.org/programs/fll/
 
-## Customize next
-- Add team photo / Nature Nexus logo.
-- Add member names and roles.
-- Replace demo dashboard values with Arduino/CSV data.
-- Add experiment results and charts.
-- Add robot CAD / wiring photos.
-- Add an expert-meeting timeline and acknowledgements.
-
-## Expert meeting section
-This version includes the Nature Nexus expert journey with Dr. Brent Bellinger, Mr. Chintan Maniyar, and the October 14 discussion with Dr. Vijay Chopakattla and Mr. Tom. The section is organized as: discussion topics → what the kids learned → how the feedback changed the prototype.
-
-
-## Verified merged version
-This package preserves the complete expert-journey content for Dr. Brent Bellinger, Mr. Chintan Maniyar, and the Dr. Vijay + Mr. Tom meeting, including what the team learned and how expert feedback influenced the project. It also includes the proposed floating water-quality monitoring device image and all prior interactive site sections.
-
-## BIOGLOW Strategy AI
-Open `strategy-ai.html` to use the robot-game strategy planner. It contains the 15 BIOGLOW Founders Edition missions, editable readiness/reliability/time assumptions, five strategy styles, mission synergies, and the October 14, 2026 Challenge Update reminders. This is a planning aid; official FIRST materials control at events.
-
-
-## BIOGLOW AI additions
-The Strategy AI now includes an Attachment Advisor, mission-specific attachment suggestions, attachment recommendations per generated run, and a Role Optimizer for match-focused and practice/development roles. Competition table access is intentionally described as a recommendation only; always follow the current official rulebook and referee instructions.
+Always verify against the latest official Game Missions, Rulebook, all Role Cards, scoresheet/scoring material, and Game Updates.
